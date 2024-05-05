@@ -25,7 +25,7 @@
 
 <div class="logo">
     <a href="/" on:click={closeMenu}>
-      <img src="favicon.png" alt="Logo">
+      <img src="logo.png" alt="Logo">
     </a>
 </div>
 <ul class="nav-list" class:active={menuActive}>
@@ -76,12 +76,15 @@
   }
 
   .nav-link:hover {
-    color: #007bff;
+    color: #19320a;
+    font-weight: 600;
   }
 
   .nav-link.selectedLink {
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
+    background-color: #19320a;
+    color: #DBE6D3;
+    border-bottom: 2px solid #296c03;
+    padding: 0.6rem 1rem;
   }
 
   .hamburger {
@@ -93,7 +96,7 @@
   }
 
   .hamburger span {
-    background-color: rgba(41, 108, 3);
+    background-color: #296c03;
     display: block;
     height: 2px;
     margin-bottom: 6px;
@@ -117,20 +120,34 @@
 
     .nav-list.active {
       display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-list.active li {
+      width: 100%;
+      text-align: center;
     }
 
     .hamburger {
       display: block;
     }
 
-      .nav-link {
+    .nav-link {
       color: #DBE6D3;
       text-decoration: none;
       padding: 0 15px;
       font-size: 18px;
       transition: color 0.3s;
+      display: block;
+      width: 100%;
     }
 
+    .nav-link.selectedLink {
+      background-color: #19320a;
+      color: #DBE6D3;
+      border-bottom: 2px solid #DBE6D3;
+      padding: 0.5rem;
+    }
     /* .close-button {
       background: transparent;
       border: none;

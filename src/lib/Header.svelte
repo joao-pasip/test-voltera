@@ -3,21 +3,27 @@
 	import Menu from "./Menu.svelte";
 </script>
 
-<nav class="navbar">
-  <Menu />
-</nav>
+<header>
+  <nav class="navbar container">
+    <Menu />
+  </nav>
+</header>
 
 <style>
   /* Estilos existentes omitidos para brevidade */
 
-  .navbar {
+  header {
     background-color: #f8f9fa;
-    padding: 1.25rem 0;
+    border-bottom: 2px solid rgba(41, 108, 3, 0.5);
+    margin-bottom: 2.5rem;
+  }
+
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid rgba(41, 108, 3, 0.5);
     width: 100%;
+    padding: 1.25rem;
   }
 
 </style>

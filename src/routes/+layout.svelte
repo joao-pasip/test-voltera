@@ -1,11 +1,11 @@
 <script>
 
 	import Footer from "$lib/Footer.svelte";
-  import Navbar from "$lib/Header.svelte";
+  import Header from "$lib/Header.svelte";
 
 </script>
 
-<Navbar />
+<Header />
 
 <slot />
 

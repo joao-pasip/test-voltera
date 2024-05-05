@@ -2,14 +2,14 @@
   const year = new Date().getFullYear()
 </script>
 
-<footer class="footer">
-  <div class="container">
+<footer>
+  <div class="containerFooter">
       <p class="copyright">© {year} Voltera Test. Todos os direitos reservados.</p>
   </div>
 </footer>
 
 <style>
-  .footer {
+  footer {
     background-color: #296C03;
     padding: 2rem 0;
     text-align: center;
@@ -17,7 +17,7 @@
     height: fit-content;
   }
 
-  .container {
+  .containerFooter {
     width: 100%;
     margin: 0 auto;
     padding: 0; /* Adiciona um espaço interno ao container */
@@ -30,7 +30,7 @@
 
   /* Responsividade */
   @media screen and (max-width: 768px) {
-    .container {
+    .containerFooter {
       width: 100%; /* Reduz o espaço interno do container em telas menores */
     }
   }

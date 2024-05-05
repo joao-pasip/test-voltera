@@ -6,23 +6,18 @@
   import { page } from "$app/stores";
   import SvelteMarkdown from "svelte-markdown";
   import { goto } from '$app/navigation';
-  import { get } from 'svelte/store';
-  // import { search } from '$app/stores';
 
   let source = ''; // Inicializa a variável para armazenar o conteúdo do Markdown
   let searchTerm = ''; // Termo de busca
   let occurrenceCount = 0; // Contagem de ocorrências
   let inputRef; // Referência para o campo de entrada
 
-  //  Obtém o termo de busca do store
-  // let searchTerm = get(search);
-
   // Função para carregar o conteúdo do arquivo Markdown
   async function loadMarkdownFile() {
+    console.log($page);
     try {
-      const response = await fetch(`${$page.url.pathname}.md`);
-      // console.log(response);
-      console.log($page);
+      const response = await fetch(`${$page.url.pathname}.md`, {cache: "no-store"});
+      console.log($page.url.pathname);
       if (!response.ok) {
         throw new Error(`Failed to load Markdown file: ${response.status} ${response.statusText}`);
       }
@@ -44,7 +39,7 @@
       updateUrlWithSearchTerm()
       countOccurrences()
     }
-    console.log(page);
+    // console.log(page);
   });
 
   // Função para contar ocorrências da palavra no texto
@@ -73,7 +68,7 @@
     if (!searchTerm || !source) return 0; // Se a busca estiver vazia ou o conteúdo do Markdown não foi carregado, retorne 0
     const regex = new RegExp('\\b' + searchTerm + '\\b', 'gi'); // Crie uma expressão regular para procurar a palavra inteira
     const matches = source.toLowerCase().match(regex); // Faça a correspondência no texto do Markdown
-    console.log(matches ? matches.length : 0);
+    // console.log(matches ? matches.length : 0);
     occurrenceCount = matches ? matches.length : 0
     // updateUrlWithSearchTerm()
   }
@@ -101,14 +96,50 @@
 
 </script>
 
-<!-- {@html marked(markdownText)} -->
-<form method="get" on:submit={handleSearchTermChange}>
-  <input type="text" bind:value={searchTerm} placeholder="Digite a palavra" bind:this={inputRef} id="q" name="q">
-  <span>{occurrenceCount} ocorrências</span>
-  <button type="submit">Pesquisar</button>
-</form>
-{#if source}
-  <SvelteMarkdown {source} />
-{:else}
-  <p>Loading...</p>
-{/if}
+<main>
+
+  <form method="get" on:submit={handleSearchTermChange} class="container">
+    <h2>Contagem de ocorrências: {occurrenceCount}</h2>
+    <input type="text" bind:value={searchTerm} placeholder="Digite a palavra" bind:this={inputRef} id="q" name="q">
+    <button type="submit">Pesquisar</button>
+  </form>
+  <section class="container">
+    {#if source}
+      <SvelteMarkdown {source} />
+    {:else}
+      <p>Loading...</p>
+    {/if}
+  </section>
+
+</main>
+
+<style>
+  form {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  form button {
+    background-color: #19320a;
+    border: none;
+    padding: 0.6rem 1rem;
+    color: #DBE6D3;
+    transition: .3s;
+    cursor: pointer;
+  }
+
+  form button:hover {
+    background-color: #296c03;
+  }
+
+  form input {
+    border-radius: 0;
+    padding: 0.6rem 1rem;
+  }
+
+   form input:focus {
+    border: 1px solid #19320a; /* Altere para a cor desejada */
+    outline: none; /* Remove a borda de destaque padrão */
+  }
+
+</style>
