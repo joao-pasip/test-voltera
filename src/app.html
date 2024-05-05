@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		%sveltekit.head%
+		<style>
+			/* * {
+				border: 2px solid red;
+			} */
+
+			body {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			.containerMain {
+				min-height: 100vh;
+				/* max-width: 100%; */
+			}
+		</style>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div class="containerMain" style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
