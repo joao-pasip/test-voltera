@@ -1,38 +1,42 @@
-# create-svelte
+# Teste Voltera
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+O teste consiste em criar uma página principal contendo links de navegação e em cada página ter uma barra de busca para contagem de ocorrências das palavras no arquivo estático markdown fornecido.
 
-## Creating a project
+## Para clonar o projeto
 
-If you're seeing this, you've probably already done this step. Congrats!
+Basta rodar o comando abaixo no seu terminal:
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+# Clona o projeto do remoto para o local utilizando SSH
+git clone git@github.com:joao-pasip/test-voltera.git
 ```
 
-## Developing
+## Siga as etapas abaixo para rodar o projeto em sua máquina
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1. Basta entrar no diretório do projeto com o seguinte comando:
+
+```bash
+cd myapp-test
+```
+
+2. Instale as dependências do projeto:
+
+```bash
+npm install
+```
+
+3. Para rodar o projeto, utilize o comando abaixo no seu terminal:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## Agradecimentos
 
-To create a production version of your app:
+Muito obrigado a Voltera Energia pela oportunidade de participar do processo seletivo para a vaga de Dev Front-End Júnior. Mais informações estão presentes na tela Home da aplicação.
 
-```bash
-npm run build
-```
+Segue as minhas redes sociais para conexões:
 
-You can preview the production build with `npm run preview`.
+> João Paulo Silva Piauhy - Linkedin: [Linkedin](https://www.linkedin.com/in/joaopasip/).
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+> João Paulo Silva Piauhy - Instagram: [Instagram](https://www.instagram.com/joaopasip/).
