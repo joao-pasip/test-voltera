@@ -7,6 +7,14 @@
 
 <Header />
 
-<slot />
+<div class="container-slot">
+  <slot />
+</div>
 
 <Footer />
+
+<style>
+  .container-slot {
+    min-height: 100vh;
+  }
+</style>
